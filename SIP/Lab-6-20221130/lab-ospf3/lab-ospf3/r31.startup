@@ -1,0 +1,5 @@
+/sbin/ifconfig eth0 172.16.1.1 netmask 255.255.255.192 broadcast 172.16.1.63  up 
+/sbin/ifconfig eth1 172.16.2.1 netmask 255.255.255.192 broadcast 172.16.2.63  up 
+/sbin/ifconfig eth2 172.16.224.65 netmask 255.255.255.192 broadcast 172.16.1.127  up 
+/sbin/ifconfig lo 127.0.0.1  
+/etc/init.d/quagga start
