@@ -1,0 +1,8 @@
+/sbin/ifconfig eth3 106.8.4.129 netmask 255.255.255.192 up
+/sbin/ifconfig eth0 192.168.1.1 netmask 255.255.255.0 up 
+/sbin/ifconfig eth1 192.168.2.1 netmask 255.255.255.0 up 
+/sbin/ifconfig lo 127.0.0.1
+chmod a+rw /etc/quagga
+/etc/init.d/quagga start
+/etc/init.d/bgpd start
+/etc/init.d/ripd start
