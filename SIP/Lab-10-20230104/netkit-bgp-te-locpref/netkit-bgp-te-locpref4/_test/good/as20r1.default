@@ -1,0 +1,60 @@
+[INTERFACES]
+
+eth0      Link encap:Ethernet  HWaddr FE:FD:0B:00:00:22  
+          inet addr:11.0.0.34  Bcast:11.0.0.35  Mask:255.255.255.252
+          inet6 addr: fe80::fcfd:bff:fe00:22/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+eth1      Link encap:Ethernet  HWaddr FE:FD:0B:00:00:06  
+          inet addr:11.0.0.6  Bcast:11.0.0.7  Mask:255.255.255.252
+          inet6 addr: fe80::fcfd:bff:fe00:6/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+eth2      Link encap:Ethernet  HWaddr FE:FD:14:01:01:01  
+          inet addr:20.1.1.1  Bcast:20.1.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::fcfd:14ff:fe01:101/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+
+
+[ROUTE]
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+11.0.0.32       *               255.255.255.252 U         0 0          0 eth0
+11.0.0.4        *               255.255.255.252 U         0 0          0 eth1
+20.1.1.0        *               255.255.255.0   U         0 0          0 eth2
+
+[LISTENING PORTS]
+
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp6       0      0 :::2601                 :::*                    LISTEN     
+tcp6       0      0 :::2605                 :::*                    LISTEN     
+tcp6       0      0 :::179                  :::*                    LISTEN     
+
+[PROCESSES]
+
+  UID COMMAND
+    0 init [2]       
+    0 [ksoftirqd/0]
+    0 [events/0]
+    0 [khelper]
+    0 [kthread]
+    0 [kblockd/0]
+    0 [pdflush]
+    0 [pdflush]
+    0 [aio/0]
+    0 [kswapd0]
+    0 /bin/sh /etc/init.d/rc 2
+    0 /sbin/klogd
+    0 /sbin/syslogd
+    0 /bin/bash /etc/rc2.d/S99netkit-phase2 start
+    0 /usr/sbin/zebra -d
+    0 /usr/sbin/bgpd -d
+    0 /bin/bash /etc/init.d/netkit-test-phase
+    0 /bin/ps -e -o uid,command
